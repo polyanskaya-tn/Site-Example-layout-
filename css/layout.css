@@ -1,0 +1,644 @@
+@charset "utf-8";
+
+/* исчезает полупрозрачный фон в ie */
+@-ms-viewport {
+	width: device-width;
+	overflow-y: auto;
+}
+/* отступы */
+p,h1,h2,h3,h4,h5,h6 {
+	margin-top: 0;
+}
+body {
+	font-family: "Trebuchet MS", "Lucida Grande", Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #696969;
+	line-height: 21px;	
+}
+/* Домик и конвертик*/
+a.topIcons {
+	opacity: 0.4;
+	transition: all 0.2s ease-in-out;
+}
+a.topIcons:hover {
+	opacity: 1.0;
+	transition: all 0.2s ease-in-out;
+}
+/* главное меню */
+.mainMenu {
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+	position: relative;
+	display: table;
+	z-index: 2;
+}
+.mainMenu > li {
+	display: table-cell;
+	position: relative;
+	padding: 0 10px;
+}
+
+.mainMenu > li:hover {
+}
+.mainMenu > li:hover > a {
+	border-bottom: #FFFFFF 5px solid;
+	-o-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	-ms-transition: all .2s ease-in-out;
+	-webkit-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+}
+.mainMenu > li > a {
+	font-family: "Trebuchet MS", "Lucida Grande", Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	color: #FFFFFF;
+	text-decoration: none;
+	font-weight: bold;
+	padding: 9px 0;
+    display: inline-block;
+	position: relative;
+	-o-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	-ms-transition: all .2s ease-in-out;
+	-webkit-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+	border-bottom: #1791fa 5px solid;
+	border-top: #1791fa 5px solid;
+	/*white-space: nowrap;*/
+}
+/*второй уровень*/
+.mainMenu > li > ul {
+	opacity: 0;
+	visibility: hidden;
+	position: absolute;
+	left: 0;
+	padding: 0;
+	margin: 20px 0 0 0;
+	background-color: rgba(255,255,255,0.95);
+	border: #ebebeb 1px solid;
+	-o-transition: opacity .3s ease-in-out, margin-top .3s ease-in-out, visibility .3s ease-in-out;
+	-moz-transition: opacity .3s ease-in-out, margin-top .3s ease-in-out, visibility .3s ease-in-out;
+	-ms-transition: opacity .3s ease-in-out, margin-top .3s ease-in-out, visibility .3s ease-in-out;
+	-webkit-transition: opacity .3s ease-in-out, margin-top .3s ease-in-out, visibility .3s ease-in-out;
+	transition: opacity .3s ease-in-out, margin-top .3s ease-in-out, visibility .3s ease-in-out;
+	box-shadow: rgba(0,0,0,0.35) 0 0 10px;
+	z-index: 3;
+}
+.mainMenu > li > ul > li { 
+	display: block;
+	border-bottom: #ebebeb 1px solid;
+	position: relative;
+}
+.mainMenu > li > ul > li:last-child {
+	border-bottom: none;	
+}
+.mainMenu > li > ul > li:hover{ 
+	background-color: #1791fa;
+}
+.mainMenu > li > ul > li > a {
+	color: #696969;
+	font-family: "Trebuchet MS", "Lucida Grande", Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	text-transform: none;
+	text-decoration: none;
+	padding: 6px 23px;
+	display: inline-block;
+	min-width: 130px;
+	/*white-space: nowrap;*/
+	max-width: 300px;
+	word-wrap: break-word;
+}
+.mainMenu > li > ul > li > a:hover {
+	color: #FFFFFF;
+}
+.mainMenu > li:hover > ul { 
+	/*display: block;*/
+	opacity: 1.0;
+	visibility: visible;
+	margin-top: 0;
+}
+/*-------третий уровень--------*/
+.mainMenu > li > ul > li > ul {
+	visibility: hidden;
+	position: absolute;
+	list-style-type: none;
+	margin: 0 0 0 20px;
+	padding: 0;
+	left: 100%;
+	top: 5px;
+	background-color: rgba(255,255,255,0.95);
+	border: #ebebeb 1px solid;
+	z-index: 4;
+	transition: all 0.2s ease-in-out;
+	opacity: 0;
+	box-shadow: rgba(0,0,0,0.35) 0 0 10px;
+}
+.mainMenu > li > ul > li:hover > ul {
+	visibility: visible;
+	opacity: 1.0;
+	margin-left: -10px;
+	transition: all 0.2s ease-in-out;
+}
+.mainMenu > li > ul > li > ul > li {
+}
+.mainMenu > li > ul > li > ul > li:hover {
+	background-color: #1791fa;
+}
+.mainMenu > li > ul > li > ul > li > a {
+	display: inline-block;
+	font-family: "Trebuchet MS", "Lucida Grande", Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	color: #696969;
+	font-size: 14px;
+	padding: 10px 17px;
+	font-size: 14x;
+	position: relative;
+	width: 100%;
+	box-sizing: border-box;
+	/*white-space: nowrap;*/
+}
+.mainMenu > li > ul > li > ul > li:hover > a {
+	color: #FFFFFF;
+	background-color: #1791fa;
+}
+.mainMenu > li > ul > li > ul > li:not(:last-child) {
+	border-bottom: #ebebeb 1px solid;
+}
+.mainMenu > li.selected {
+
+}
+.mainMenu > li.selected > a {
+	border-bottom: #FFFFFF 5px solid;
+}
+.mainMenu > li > ul > li.selected, .mainMenu > li > ul > li.selected > a {
+	color: #FFFFFF;
+	background-color: #1791fa;
+}
+.mainMenu > li > ul > li > ul > li.selected > a {
+	color: #FFFFFF;
+	background-color: #1791fa;
+}
+/* меню для каталога на главной */
+.catalogMenu {
+	margin: 0;
+	padding: 0;
+	text-align: justify;
+}
+.catalogMenu::after {width: 100%; display: inline-block; content: "."; visibility: hidden}
+.catalogMenu > li {
+	display: inline-block;
+	background-color: #1791fa;
+	text-align: center;
+	border: #1791fa 2px solid;
+	transition: all 0.2s ease-in-out;
+}
+.catalogMenu > li:hover {
+	box-shadow: rgba(0,0,0,0.35) 0 0 10px;
+	border-color: rgba(0,0,0,0.35);
+	transition: all 0.2s ease-in-out;
+}
+.catalogMenu > li > a {
+	font-family: "Trebuchet MS", "Lucida Grande", Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	font-weight: bold;
+	color: #FFFFFF;
+	padding: 7px 5px;
+	text-decoration: none;
+	display: inline-block;
+	line-height: normal;
+}
+/* товары каталога на главной */
+.theProduct {
+	border: rgba(204,204,204,0) 2px solid;
+	padding-top: 10px;
+	text-align: center;
+	position: relative;
+	box-sizing: border-box;
+	z-index: 1;
+	width: 235px;
+	margin: 0 20px 20px 0;
+	display: inline-block;
+}
+.theProduct .name {
+	margin: 10px 10px 10px 10px;
+}
+.theProduct .name a {
+	font-family: "rodchenkocondlightcregular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 23px;
+	color: #bebebe;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+.theProduct .name a:hover {
+	color: #0876d5;
+}
+.theProduct .price {
+	font-family: "rodchenkocondcregular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #696969;
+	font-size: 35px;
+	line-height: normal;
+	margin: 0 10px 20px 10px;
+}
+.theProduct .props tr td {
+	border-bottom: #dddddd 1px solid;
+	padding: 3px 0;
+}
+.theProduct .props tr:last-child td {
+	border: none;
+}
+.theProduct .catalogLink {
+	background-color: #1791fa;
+	text-align: center;
+	margin-top: 15px;
+	padding: 5px 0;
+}
+.theProduct .catalogLink a {
+	background: url(../images/editor/decor/to-catalog.png) left 50% no-repeat;
+	display: inline-block;
+	padding: 10px 0 10px 40px;
+	text-decoration: none;
+	font-family: "rodchenkocondcregular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #FFFFFF;
+	font-size: 35px;
+}
+.theProduct .addInfo {
+	padding-top: 372px;
+	position: absolute;
+	left: -2px;
+	top: -2px;
+	border: 2px #cccccc solid;
+	width: 235px;
+	box-sizing: border-box;
+	background-color: #FFFFFF;
+	z-index: -1;
+}
+.theProduct:hover .addInfo {
+	border-color: #1791fa;
+	box-shadow: rgba(0,0,0,0.35) 0 0 25px;
+}
+.theProduct .addInfo .props, .theProduct .addInfo .catalogLink  {
+	display: none;
+}
+.theProduct:hover .addInfo .props, .theProduct:hover .addInfo .catalogLink  {
+	display: block;
+}
+.topSale:before {
+	content: '';
+	width: 100px;
+	height: 100px;
+	background: url(../images/hit.png) left top no-repeat;
+	position: absolute;
+	left: -2px;
+	top: -2px;
+	z-index:5;
+}
+.theProduct:hover {
+	z-index: 2;
+}
+.mainMenuLevel2 {
+	margin: 0;
+	padding:  35px 0 0 0;
+	list-style-type: none;
+}
+.mainMenuLevel2 > li {
+	padding: 10px 0;
+	border-top: #D1D1D1 1px solid;
+}
+.mainMenuLevel2 > li:last-child {
+	border-bottom: #D1D1D1 1px solid;
+}
+.mainMenuLevel2 > li > a {
+	font-family: "rodchenkocondcregular", "Trebuchet MS", "Lucida Grande", Arial, Helvetica, sans-serif;
+	font-size: 21px;
+	color: #818489;
+	font-weight: normal;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+.mainMenuLevel2 > li > a:hover {
+	text-decoration: underline;
+}
+.mainMenuLevel2 > li > a.selected {
+	color: #51a3df;
+}
+.mainMenuLevel3 {
+	margin: 0 0 0 25px;
+	padding: 10px 0 0 0;
+	list-style-type: none;
+}
+.mainMenuLevel3 > li {
+	padding: 5px 0;
+	border-top: #D1D1D1 1px dotted;
+	list-style-type: none;
+}
+.mainMenuLevel3 > li:last-child {
+	border-bottom: #D1D1D1 1px dotted;
+}
+.mainMenuLevel3 > li > a {
+	font-family: "Trebuchet MS", "Lucida Grande", Arial, Helvetica, sans-serif;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-size: 13px;
+	color: #8d8d8d;
+}
+.mainMenuLevel3 > li > a:hover {
+	text-decoration: underline;
+}
+.mainMenuLevel3 > li > a.selected {
+	color: #51a3df;
+}
+.catalogMainTable a[rel="lightbox"] {
+	border: #e5e5e5 1px solid;
+	display: inline-block;
+	padding: 9px;
+	line-height: 0;
+	margin-bottom: 20px;
+}
+.catalogMainTable .price {
+	font-family: "rodchenkocondcregular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #696969;
+	font-size: 35px;
+	line-height: normal;
+	margin-bottom: 10px;
+}
+.catalogMainTable .Header1, .catalogMainTable  h1 {
+	margin-bottom: 10px;
+}
+.propTable {
+	margin-top: 15px;
+}
+.propTable tr:nth-child(odd) td {
+	background-color: #f5f5f5;
+}
+.propTable td {
+	font-family: "Trebuchet MS", "Lucida Grande", Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	line-height: normal;
+	border-bottom: #beb3b3 1px dotted;
+	padding: 3px 0;
+}
+.propTable td:nth-child(odd) {
+	color: #a7a7a7;
+	font-weight: bold;
+	padding-left: 3px;
+}
+.propTable tr:last-child td {
+	border-bottom: none;
+}
+.propTable a {
+	line-height: normal;
+	color: #72a3df;
+	text-decoration: none;
+}
+.propTable a:hover {
+	text-decoration: underline;
+}
+.naviText {
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration:none;;
+	font-size: 11px;
+	color: rgb(170,170,170);
+	font-weight: normal;
+	line-height: normal;
+}
+.naviLink {
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration: underline;
+	font-size: 11px;
+	color: rgb(170,170,170);
+	font-weight: normal;
+	line-height: normal;
+}
+.naviLink:hover {
+	color: #51a3df;
+}
+.orangeButton {
+	font-family: "Trebuchet MS", "Lucida Grande", Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	font-weight: bold;
+	color: #FFFFFF;
+	background-color: #f37a00;
+	padding: 7px 15px;
+	text-decoration: none;
+	display: inline-block;
+	line-height: normal;
+	transition: all 0.2s ease-in-out;
+	border: #f37a00 3px solid;
+	cursor: pointer;
+}
+.orangeButton:hover {
+	transition: all 0.2s ease-in-out;
+	border-color: #974c00;
+}
+.greenButton {
+	font-family: "Trebuchet MS", "Lucida Grande", Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	font-weight: bold;
+	color: #FFFFFF;
+	background-color: #007a3c;
+	padding: 7px 15px;
+	text-decoration: none;
+	display: inline-block;
+	line-height: normal;
+	transition: all 0.2s ease-in-out;
+	border: #007a3c 3px solid;
+	cursor: pointer;
+}
+.greenButton:hover {
+	transition: all 0.2s ease-in-out;
+	border-color: #004c25;
+}
+.blueButton {
+	font-family: "Trebuchet MS", "Lucida Grande", Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	font-weight: bold;
+	color: #FFFFFF;
+	background-color: #1793fc;
+	padding: 7px 15px;
+	text-decoration: none;
+	display: inline-block;
+	line-height: normal;
+	transition: all 0.2s ease-in-out;
+	border: #1793fc 3px solid;
+	cursor: pointer;
+}
+.blueButton:hover {
+	transition: all 0.2s ease-in-out;
+	border-color: #0e5b9c;
+}
+.greyButton {
+	font-family: "Trebuchet MS", "Lucida Grande", Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	font-weight: bold;
+	color: #FFFFFF;
+	background-color: #949494;
+	padding: 7px 15px;
+	text-decoration: none;
+	display: inline-block;
+	line-height: normal;
+	transition: all 0.2s ease-in-out;
+	border: #949494 3px solid;
+	cursor: pointer;
+}
+.greyButton:hover {
+	transition: all 0.2s ease-in-out;
+	border-color: #494949;
+}
+input.niceInput, textarea.niceInput, select.niceInput {
+    box-sizing: border-box;
+    width: 100%;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	line-height: normal;
+	border-radius: 3px;
+	padding: 5px 7px;
+	border: #CCCCCC 1px solid;
+  }
+.niceInput::-webkit-input-placeholder {color:#c9c9c9;}
+.niceInput::-moz-placeholder          {color:#c9c9c9;}/* Firefox 19+ */
+.niceInput:-moz-placeholder           {color:#c9c9c9;}/* Firefox 18- */
+.niceInput:-ms-input-placeholder      {color:#c9c9c9;}
+
+  table.niceInput td {
+    vertical-align: top;
+    padding: 1px 5px;
+  }
+  .niceInput.error {
+	border: #DB0306 1px solid;
+  }
+.orderProductTable td {
+	padding: 5px 0;
+	border-bottom: #d1d1d1 1px solid;
+}
+.orderProductTable tr:first-child td {
+	color: #aaaaaa;
+	font-weight: bold;
+	font-style: italic;
+}
+.orderProductTable tr:not(:first-child) td:nth-child(7) {
+	font-weight: bold;
+}
+.orderProductTable img {
+	border: #d1d1d1 1px solid;
+}
+.orderProductTable input {
+    box-sizing: border-box;
+    width: 75px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	line-height: normal;
+	border-radius: 3px;
+	padding: 5px 7px;
+	border: #CCCCCC 1px solid;
+}
+.totalTable {
+	margin-top: 10px;
+}
+.totalTable td {
+	color: #FFFFFF;
+	font-weight: bold;
+	padding: 5px 0;
+}
+.osram {
+	background: url(../images/editor/icons/osram.png) right 50% no-repeat;
+}
+.samsung {
+	background: url(../images/editor/icons/samsung.png) right 50% no-repeat;
+}
+.seoul {
+	background: url(../images/editor/icons/seoul.png) right 50% no-repeat;
+}
+.edison {
+	background: url(../images/editor/icons/edison.png) right 50% no-repeat;
+}
+.replacement {
+	font-family: "Trebuchet MS", "Lucida Grande", Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #0876d5;
+	line-height: 21px;
+	text-decoration: none;
+	border-bottom: #0876d5 1px dashed;
+	cursor: pointer;
+}
+.addLampButton:before {
+	position: absolute;
+	content: "";
+	left: -32px;
+	top: -2px;
+	width: 25px;
+	height: 25px;
+	background: url(../images/editor/icons/plus.png) left top no-repeat;	
+}
+.addLampButton {
+	font-family: "Trebuchet MS", "Lucida Grande", Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	color: #0876d5;
+	line-height: 21px;
+	text-decoration: none;
+	border-bottom: #0876d5 2px dashed;
+	cursor: pointer;
+	margin-left: 32px;
+	position: relative;
+}
+.theLamp {
+	border: #d1d1d1 1px solid;
+	border-radius: 5px;
+	width: 390px;
+	margin: 0 30px 20px 0;
+	padding: 11px;
+	position: relative;
+	display: inline-block;
+}
+.theLamp td:first-child img {
+	display: inline-block;
+	border: #d1d1d1 1px solid;
+}
+.activeLamps .theLamp .lampClose {
+	opacity: 0.05;
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
+}
+.activeLamps .theLamp:hover .lampClose {
+	opacity: 1.0;
+	transition: all 0.2s ease-in-out;
+}
+.allLamps {
+	display: none;
+}
+.allLamps .lampClose {
+	display: none;
+}
+.allLamps .theLamp {
+	cursor: pointer;
+}
+.catalog-content .theProduct {
+	margin: 0 5px 20px 0;	
+}
+.catalog-content .theProduct:nth-child(3n) {
+	margin: 0 0 20px 0;	
+}
+.add-to-compare {
+	text-decoration: none;
+	cursor: pointer;
+	position: absolute;
+	right: 0;
+	left: 0;
+	top: 0;
+	display: inline-block;
+	visibility: hidden;
+	text-align: center;
+	padding: 10px;
+	background-color: #1791fa;
+	color: #FFFFFF;
+	font-weight: bold;
+	font-size: 15px;
+	opacity: 0;
+}
+.theProduct:hover .add-to-compare {
+	visibility: visible;
+	opacity: 0.85;
+	transition: opacity 0.1s ease-in-out 0.25s;
+}

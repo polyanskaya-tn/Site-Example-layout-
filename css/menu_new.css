@@ -1,0 +1,171 @@
+/* главное меню */
+.mainMenu.ul, .mainMenu ul {
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+}
+.mainMenu {
+	display: block;
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+	z-index: 5;
+}
+.mainMenu > li {
+	display: inline-block;
+	position: relative;
+	padding: 14px 12px;
+	border-left: 1px solid #45a7fb;
+	border-right: 1px solid #1274c8;
+}
+.mainMenu > li:first-of-type {
+	border-left: none;	
+}
+.mainMenu > li:last-of-type {
+	border-right: none;	
+}
+.mainMenu > li:hover {
+	background-color: #5db2fc; 
+}
+.mainMenu > li > a {
+	color: #FFFFFF;
+	text-decoration: none;
+	font-weight: bold;
+	-o-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	-ms-transition: all .2s ease-in-out;
+	-webkit-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+}
+
+/*второй уровень*/
+.mainMenu > li > ul {
+	opacity: 0;
+	visibility: hidden;
+	position: absolute;
+	left: 0;
+	top: 100%;
+	padding: 0;
+	margin: 20px 0 0 0;
+	background-color: rgba(255,255,255,0.95);
+	border: #ebebeb 1px solid; 
+	box-shadow: rgba(0,0,0,0.35) 0 0 10px;
+	z-index: 6;
+	
+	-o-transition: opacity .3s ease-in-out, margin-top .3s ease-in-out, visibility .3s ease-in-out;
+	-moz-transition: opacity .3s ease-in-out, margin-top .3s ease-in-out, visibility .3s ease-in-out;
+	-ms-transition: opacity .3s ease-in-out, margin-top .3s ease-in-out, visibility .3s ease-in-out;
+	-webkit-transition: opacity .3s ease-in-out, margin-top .3s ease-in-out, visibility .3s ease-in-out;
+	transition: opacity .3s ease-in-out, margin-top .3s ease-in-out, visibility .3s ease-in-out;
+}
+.mainMenu > li > ul > li { 
+	border-bottom: #ebebeb 1px solid;
+	position: relative;
+	padding: 6px 23px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: initial;
+}
+.mainMenu > li > ul > li:last-child {
+	border-bottom: none;	
+}
+.mainMenu > li > ul > li:hover{ 
+	background-color: #1791fa;
+}
+.mainMenu > li > ul > li > a {
+	color: #696969;
+	text-decoration: none;
+	white-space: nowrap;
+}
+.mainMenu > li > ul > li:hover > a {
+	color: #FFFFFF;
+}
+.mainMenu > li:hover > ul { 
+	opacity: 1.0;
+	visibility: visible;
+	margin-top: 0;
+}
+.main-menu .collapse {
+	display: none;
+}
+
+@media screen and (max-width: 980px) {
+	.mainMenu > li > a {
+		font-weight: normal;				
+	}
+}
+
+@media screen and (max-width: 860px) {
+	.mainMenu > li.extra {
+		display: none;
+	}	
+}
+
+@media screen and (max-width: 600px) {
+
+	.main-menu .collapse {
+		display: block;
+		position: relative;
+		padding: 5px;
+		border-radius: 5px;
+		border: 1px solid #1274c8;
+		box-shadow: #45a7fb 1px 1px 1px, inset #45a7fb 1px 1px 1px;
+	}
+	.main-menu .collapse:hover {
+		background-color: #5db2fc; 
+	}
+	.main-menu .collapse img {
+		width: 30px;
+		vertical-align: middle;
+	}
+	.mainMenu {
+		display: none;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
+		text-align: left !important;
+		background-color: white;
+		padding: 15px;
+		border-radius: 5px;
+		margin-top: 10px;
+		order: 1;
+		border: #ebebeb 1px solid;
+		box-shadow: rgba(0,0,0,0.35) 0 0 10px;
+	}
+	.mainMenu > li {
+		display: block;
+		padding: 0;
+		border: none;
+	}
+	.mainMenu > li:hover{ 
+		background: transparent;
+	}
+	.mainMenu > li.extra {
+		display: block;
+	}	
+	.mainMenu > li > a {
+		display: block;
+		color: black;
+		font-weight: bold;
+		padding: 6px 12px;
+		/*border-bottom: #ebebeb 1px solid;*/
+	}
+	.mainMenu > li > ul {
+		display: block;
+		visibility: visible;
+		opacity: 1;
+		position: static;
+		border: none;
+		margin: 0;
+		/*width: 100%;*/
+		box-shadow: none;
+	}
+	.mainMenu > li > ul > li:hover{ 
+		background: transparent;
+    }
+    .mainMenu > li > ul > li:hover > a {
+		color: #696969;
+	}
+}
+
